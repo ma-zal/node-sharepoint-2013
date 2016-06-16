@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/ma-zal/node-sharepoint-2013#readme",
   "dependencies": {
-    "adal-node": "^0.1.19"
+    "adal-node": "^0.1.19",
+    "bluebird": "^3.4.0",
+    "request-promise": "^3.0.0"
   }
 }

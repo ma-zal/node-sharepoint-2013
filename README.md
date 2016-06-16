@@ -71,8 +71,8 @@ var sharepointSourceConfig = {
 };
 
 // Library loading
-var sharepoint = require('node-sharepoint-2013/lib/sharepoint-lists');
 var sharepointTokenService = require('node-sharepoint-2013/lib/sharepoint-token')(sharepointSourceConfig);
+var sharepointListService = require('node-sharepoint-2013/lib/sharepoint-lists');
 ```
 
 
@@ -106,7 +106,7 @@ var mySharepointSite = 'mySite'
 // Get all lists
 sharepointTokenService.getToken().then(function(/*TokenResponse*/ tokenResponse) {
    
-    return sharepoint.findAllLists(
+    return sharepointListService.findAllLists(
         sharepointSourceConfig.sharepointResourceUrl,
         mySharepointSite,
         tokenResponse.accessToken
@@ -140,7 +140,7 @@ var sharepointListGUID = '00000000-0000-0000-0000-list0guid000';
 
 // Get list details 
 sharepointToken.getToken().then(function(/*TokenResponse*/ tokenResponse) {
-    return sharepoint.getListWithAttachmentFiles(
+    return sharepointListService.getListWithAttachmentFiles(
         sharepointSourceConfig.sharepointResourceUrl,
         mySharepointSite,
         sharepointListGUID,
